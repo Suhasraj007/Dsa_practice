@@ -1,12 +1,17 @@
+/** author = suhas */
+
+// Main linked list class contain variables and methods
 public class LL {
     private Node head;
     private Node tail;
     private int size;
 
+    // Constructor method for linked list class
     public LL() {
         this.size = 0;
     }
 
+    // Method to insert at first position
     public void insertFirst(int value) {
         Node node = new Node(value);
         node.next = head;
@@ -18,6 +23,7 @@ public class LL {
         size++;
     }
 
+    // Method to insert at last position
     public void insertLast(int value) {
         Node node = new Node(value);
         if (size == 0) {
@@ -29,6 +35,7 @@ public class LL {
         size++;
     }
 
+    // Method to display all the elements in the linked list
     public void display() {
         Node temp = head;
         while (temp != null) {
@@ -38,6 +45,7 @@ public class LL {
         System.out.println("END");
     }
 
+    // Method to insert at particular index
     public void insertIndex(int value, int index) {
         if (index < 0 && index > size) {
             System.out.println("Please enter a valid index");
@@ -60,6 +68,7 @@ public class LL {
         size++;
     }
 
+    // Method to delete the first element
     public int deleteFirst() {
         if (size == 0) {
             return -1;
@@ -75,6 +84,7 @@ public class LL {
         return ans;
     }
 
+    // Method to delete the last element
     public int deleteLast() {
         if (size == 0) {
             return -1;
@@ -93,6 +103,7 @@ public class LL {
         return ans;
     }
 
+    // Method to delete at particular index
     public int deleteIndex(int index) {
         if (index < 0 && index > size) {
             return -1;
@@ -113,14 +124,17 @@ public class LL {
         return ans;
     }
 
+    // Internal Class node contains variables and methods
     private class Node {
         int value;
         Node next;
 
+        // constructor method for class node
         public Node(int value) {
             this.value = value;
         }
 
+        // Constructor method for class node
         public Node(int value, LL.Node next) {
             this.value = value;
             this.next = next;
@@ -128,6 +142,7 @@ public class LL {
 
     }
 
+    // Main method to excecut the program
     public static void main(String[] args) {
         LL obj = new LL();
         obj.insertFirst(3);
