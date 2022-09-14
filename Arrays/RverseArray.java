@@ -4,7 +4,7 @@ public class RverseArray {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         System.out.println(Arrays.toString(arr));
-        reverse(arr);
+        reverse2(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -16,6 +16,14 @@ public class RverseArray {
             arr[i] = arr[j];
             arr[j] = temp;
             j--;
+        }
+    }
+
+    static void reverse2(int[] arr) {
+        for (int start = 0, end = arr.length - 1; start <= end; start++, end--) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
         }
     }
 }

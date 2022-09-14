@@ -20,4 +20,8 @@ public class SwapTwoElements {
             arr[j] = temp;
         }
     }
+
+    static void swap2(int[] arr, int i, int j) {
+
+    }
 }
