@@ -15,24 +15,24 @@ public class maximumSubArray {
         // start and end index of the sub array
         int start = 0;
         int end = 0;
+        int s = 0;
 
         // linearly traversing the array
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             // adding the element into the current sum variable
             curSum += arr[i];
 
             // if my currentsum is greater than the maxsum update the maxsum
             if (curSum >= maxSum) {
                 maxSum = curSum;
+                start = s;
                 end = i;
             }
             // if we are carrying any negative sum just leave that part and move onto the
             // next subarray
             if (curSum < 0) {
                 curSum = 0;
-                if (i < arr.length - 1) {
-                    start = i + 1;
-                }
+                s = i + 1;
             }
         }
         int[] result = { maxSum, start, end };
